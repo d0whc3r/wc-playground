@@ -1,0 +1,11 @@
+{
+  "version": "independent",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish version JENKINS_IGNORE",
+      "ignoreChanges": ["*-lock.json"]
+    }
+  },
+  "packages": ["packages/*"]
+}

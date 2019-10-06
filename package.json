@@ -1,0 +1,56 @@
+{
+  "name": "@d0whc3r/monaco-live",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/stencil-component/stencil-component.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "dev": "lerna run dev --stream",
+    "build": "lerna run build --stream",
+    "docs": "lerna run docs --stream",
+    "clean": "lerna clean --yes && npm run clean:packages && rm -fr node_modules",
+    "clean:packages": "lerna exec -- rm -fr .stencil www *-docs.json *-stats.json dist build .rpt2_cache src/components.d.ts package-lock.json",
+    "----MONACO-EDITOR----": "------------------------------------------------------------------------------------------------",
+    "monaco:dev": "lerna run dev --scope @d0whc3r/monaco-editor",
+    "monaco:build": "lerna run build --scope @d0whc3r/monaco-editor",
+    "monaco:docs": "lerna run docs --scope @d0whc3r/monaco-editor",
+    "----LIVE-CODE----": "------------------------------------------------------------------------------------------------",
+    "live:dev": "lerna run dev --scope @d0whc3r/live-code",
+    "live:build": "lerna run build --scope @d0whc3r/live-code",
+    "live:docs": "lerna run docs --scope @d0whc3r/live-code"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "packages/**/src/**/*.{tsx,ts,js,json,scss,html}|!node_modules|!packages/**/(dist|build)/*": [
+      "npm run format"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "core-js": "^3.2.1",
+    "husky": "^3.0.7",
+    "lerna": "^3.16.4",
+    "lint-staged": "^9.4.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "rimraf": "^3.0.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@d0whc3r/monaco-editor",
+  "version": "0.0.1",
+  "description": "Stencil Component for monaco editor",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/stencil-component/stencil-component.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "./monaco-workers.sh && stencil build",
+    "dev": "stencil build --dev --watch --serve",
+    "docs": "stencil build --docs",
+    "test": "stencil test --spec --e2e",
+    "test:spec": "stencil test --spec --coverage",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "parcel": "parcel"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.18.1"
+  },
+  "devDependencies": {
+    "@stencil/core": "1.5.4",
+    "@stencil/postcss": "^1.0.1",
+    "@stencil/sass": "^1.0.1",
+    "cssnano": "^4.1.10",
+    "parcel": "^1.12.3",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-postcss": "^2.0.3"
+  },
+  "license": "MIT"
+}

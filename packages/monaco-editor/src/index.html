@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/monaco-editor.esm.js"></script>
+  <script nomodule src="/build/monaco-editor.js"></script>
+  <script src="../node_modules/@d0whc3r/live-code/build/bundle.js"></script>
+</head>
+<body>
+
+<monaco-editor></monaco-editor>
+<live-code></live-code>
+
+<script>
+  document.addEventListener('editorWillLoad', function() {
+    var editor = document.querySelector('monaco-editor');
+    var content = '<h1>test playground</h1>';
+    setContent(content);
+    editor.model = {
+      filename: 'index.html',
+      language: 'html',
+      content: content,
+      options: {
+        lineNumbers: 'on',
+        theme: 'vs',
+      },
+    };
+    editor.addEventListener('editorChanged', function(info) {
+      console.log('content html?', info);
+      setContent(info.detail.content);
+    });
+  });
+
+  function setContent(content) {
+    var live = document.querySelector('live-code');
+    live.code = content;
+  }
+</script>
+</body>
+</html>

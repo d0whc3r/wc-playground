@@ -1,0 +1,14 @@
+.live-viewer, .live-error {
+  padding-left: 5%;
+  width: 45%;
+  height: 100px;
+  float: left;
+}
+
+.live-error {
+  margin-left: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  color: red;
+  border: 1px solid red;
+}
