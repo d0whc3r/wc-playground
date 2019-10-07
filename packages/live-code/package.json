@@ -16,6 +16,7 @@
   "files": [
     "build"
   ],
+  "main": "build/bundle.js",
   "scripts": {
     "dev": "react-app-rewired start",
     "build": "react-app-rewired build",

@@ -1,0 +1,22 @@
+.editor {
+  float: left;
+  width: 45%;
+  height: 800px;
+}
+
+.viewer {
+  float: left;
+  margin-left: 5%;
+  width: 45%;
+  height: 800px;
+
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.theme-default-content:not(.custom) {
+  max-width: 100%;
+}

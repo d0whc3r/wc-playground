@@ -1,12 +1,15 @@
 import { Config } from '@stencil/core';
-import { sass } from '@stencil/sass';
 import postcss from 'rollup-plugin-postcss';
+import { sass } from '@stencil/sass';
 // @ts-ignore
 import cssnano from 'cssnano';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
+// https://stenciljs.com/docs/config
+
 export const config: Config = {
-  namespace: 'monaco-editor',
+  namespace: 'live-editor',
+
   plugins: [
     sass(),
     postcss({
@@ -26,23 +29,14 @@ export const config: Config = {
     }),
     nodePolyfills()
   ],
-  // commonjs: {
-  //   namedExports: {
-  //     'node_modules/react/index.js': ['Children', 'Component', 'PropTypes', 'createElement', 'Fragment'],
-  //     'node_modules/react-dom/index.js': ['render']
-  //   }
-  // },
+  globalStyle: 'src/global/app.scss',
+  globalScript: 'src/global/app.ts',
   outputTargets: [
     {
-      type: 'dist',
-      esmLoaderPath: '../loader'
-    },
-    {
-      type: 'docs-readme'
-    },
-    {
       type: 'www',
-      serviceWorker: null // disable service workers
+      // comment the following line to disable service workers in production
+      serviceWorker: null,
+      baseUrl: 'https://myapp.local/'
     }
   ]
 };

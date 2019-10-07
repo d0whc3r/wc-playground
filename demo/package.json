@@ -1,0 +1,25 @@
+{
+  "name": "@d0whc3r/live-editor",
+  "version": "0.0.1",
+  "description": "Ionic playground",
+  "scripts": {
+    "build": "stencil build --prod --es5",
+    "dev": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@d0whc3r/live-code": "^0.0.1",
+    "@d0whc3r/monaco-editor": "^0.0.1",
+    "@ionic/core": "^4.10.0",
+    "@stencil/core": "^1.5.4",
+    "@stencil/postcss": "1.0.1",
+    "@stencil/sass": "1.0.1",
+    "core-js": "^3.2.1",
+    "cssnano": "^4.1.10",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-postcss": "^2.0.3"
+  },
+  "license": "MIT"
+}

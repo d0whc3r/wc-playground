@@ -1,0 +1,4 @@
+MD033: false # no-inline-html
+MD013: false # line_length
+MD025: false # single-title
+MD041: false # first-line-h1

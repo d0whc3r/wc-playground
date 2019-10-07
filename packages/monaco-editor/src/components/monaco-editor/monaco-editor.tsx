@@ -1,20 +1,25 @@
-import { editor, KeyCode, KeyMod, Uri } from 'monaco-editor';
 import * as monaco from 'monaco-editor';
-import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
+import { editor, KeyCode, KeyMod, Uri } from 'monaco-editor';
+import { Component, Event, EventEmitter, h, Method, Prop, Watch } from '@stencil/core';
 
 interface MonacoModel {
   options: any;
-  model: editor.ITextModel
+  model: editor.ITextModel;
 }
 
 @Component({
   tag: 'monaco-editor',
   styleUrl: 'monaco-editor.scss',
   assetsDirs: ['workers'],
-  shadow: false,
+  shadow: false
 })
 export class MonacoEditorComponent {
-  @Prop() model!: { filename: string; content: string; language: string; options?: any; };
+  @Prop() model?: {
+    filename: string;
+    content: string;
+    language: string;
+    options?: any;
+  };
   @Prop() options?: editor.IEditorConstructionOptions;
   @Prop() theme?: string;
   @Prop() readonly = false;
@@ -27,7 +32,7 @@ export class MonacoEditorComponent {
   @Event() editorWillLoad!: EventEmitter;
 
   private codeEditor?: editor.IStandaloneCodeEditor;
-  private monacoModel?: MonacoModel;
+  private monacoModel?: MonacoModel = { model: undefined, options: undefined };
   private container: HTMLDivElement;
 
   componentDidLoad() {
@@ -40,7 +45,7 @@ export class MonacoEditorComponent {
       renderLineHighlight: 'none',
       glyphMargin: true,
       formatOnType: true,
-      formatOnPaste: true,
+      formatOnPaste: true
     });
     const { model, options } = this.initMonaco();
     if (model) {
@@ -55,8 +60,8 @@ export class MonacoEditorComponent {
       keybindings: [KeyMod.CtrlCmd | KeyCode.KEY_S],
       keybindingContext: '!editorReadonly',
       contextMenuGroupId: '0_navigation',
-      contextMenuOrder: .2,
-      run: this.runSave.bind(this),
+      contextMenuOrder: 0.2,
+      run: this.runSave.bind(this)
     });
   }
 
@@ -71,31 +76,34 @@ export class MonacoEditorComponent {
     }
   }
 
-  private initMonaco() {
-    const { filename, content, language, options } = this.model;
-    const info = this.monacoModel;
-    if (info) {
-      editor.setModelLanguage(info.model, language);
-      info.model.setValue(content);
-      info.options = options;
-    } else {
-      const model = editor.createModel(content, language, Uri.parse(`inmemory://model/${filename}`));
-      model.onDidChangeContent(() => {
-        const content = model && model.getValue();
-        this.editorChanged.emit({ filename, content });
-      });
-      this.monacoModel = { options, model };
-    }
-    return this.monacoModel;
-  }
-
-  // private _updateOptions(opts:MonacoModel) {
-  //   const { model, options } = opts;
+  // private _updateOptions() {
+  //   const { model, options } = this.initMonaco();
   //   this.codeEditor.setModel(model);
   //   if (options) {
   //     this.codeEditor.updateOptions(options);
   //   }
   // }
+
+  @Watch('model')
+  private initMonaco() {
+    if (this.model) {
+      const { filename, content, language, options } = this.model;
+      const info = this.monacoModel;
+      if (info && info.model) {
+        editor.setModelLanguage(info.model, language);
+        info.model.setValue(content);
+        info.options = options;
+      } else {
+        const model = editor.createModel(content, language, Uri.parse(`inmemory://model/${filename}`));
+        model.onDidChangeContent(() => {
+          const content = model && model.getValue();
+          this.editorChanged.emit(content);
+        });
+        this.monacoModel = { options, model };
+      }
+    }
+    return this.monacoModel;
+  }
 
   setupWorker(win: any) {
     win.MonacoEnvironment = {
@@ -113,7 +121,7 @@ export class MonacoEditorComponent {
           return './build/workers/typescript.worker.js';
         }
         return './build/workers/editor.worker.js';
-      },
+      }
     };
   }
 
@@ -124,6 +132,6 @@ export class MonacoEditorComponent {
   }
 
   render() {
-    return <div style={{ width: this.width, height: this.height }} ref={(el) => this.container = el}/>;
+    return <div style={{ width: this.width, height: this.height }} ref={(el) => (this.container = el)} />;
   }
 }

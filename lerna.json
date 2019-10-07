@@ -7,5 +7,5 @@
       "ignoreChanges": ["*-lock.json"]
     }
   },
-  "packages": ["packages/*"]
+  "packages": ["packages/*", "demo/"]
 }

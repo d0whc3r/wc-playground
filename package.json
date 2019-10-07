@@ -20,15 +20,19 @@
     "build": "lerna run build --stream",
     "docs": "lerna run docs --stream",
     "clean": "lerna clean --yes && npm run clean:packages && rm -fr node_modules",
-    "clean:packages": "lerna exec -- rm -fr .stencil www *-docs.json *-stats.json dist build .rpt2_cache src/components.d.ts package-lock.json",
+    "clean:packages": "lerna exec -- rm -fr .stencil www *-docs.json *-stats.json dist build .cache loader .rpt2_cache src/components.d.ts package-lock.json",
+    "format": "pretty-quick \"packages/**/**/**/*.{tsx,ts,html,scss}\" --write --staged",
     "----MONACO-EDITOR----": "------------------------------------------------------------------------------------------------",
-    "monaco:dev": "lerna run dev --scope @d0whc3r/monaco-editor",
-    "monaco:build": "lerna run build --scope @d0whc3r/monaco-editor",
-    "monaco:docs": "lerna run docs --scope @d0whc3r/monaco-editor",
+    "monaco:dev": "lerna run dev --scope @d0whc3r/monaco-editor --stream",
+    "monaco:build": "lerna run build --scope @d0whc3r/monaco-editor --stream",
+    "monaco:docs": "lerna run docs --scope @d0whc3r/monaco-editor --stream",
     "----LIVE-CODE----": "------------------------------------------------------------------------------------------------",
-    "live:dev": "lerna run dev --scope @d0whc3r/live-code",
-    "live:build": "lerna run build --scope @d0whc3r/live-code",
-    "live:docs": "lerna run docs --scope @d0whc3r/live-code"
+    "live:dev": "lerna run dev --scope @d0whc3r/live-code --stream",
+    "live:build": "lerna run build --scope @d0whc3r/live-code --stream",
+    "live:docs": "lerna run docs --scope @d0whc3r/live-code --stream",
+    "----DEMO----": "------------------------------------------------------------------------------------------------",
+    "demo:dev": "lerna run dev --scope @d0whc3r/live-editor --stream",
+    "demo:build": "lerna run build --scope @d0whc3r/live-editor --stream"
   },
   "husky": {
     "hooks": {
