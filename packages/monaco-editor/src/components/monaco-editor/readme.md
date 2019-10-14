@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description | Type                                                                      | Default     |
@@ -13,6 +14,7 @@
 | `theme`    | `theme`    |             | `string`                                                                  | `undefined` |
 | `width`    | `width`    |             | `string`                                                                  | `'800px'`   |
 
+
 ## Events
 
 | Event            | Description | Type               |
@@ -22,14 +24,20 @@
 | `editorSave`     |             | `CustomEvent<any>` |
 | `editorWillLoad` |             | `CustomEvent<any>` |
 
+
 ## Methods
 
 ### `runSave() => Promise<void>`
+
+
 
 #### Returns
 
 Type: `Promise<void>`
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

@@ -15,7 +15,7 @@
     "loader/"
   ],
   "scripts": {
-    "build": "./monaco-workers.sh && rimraf dist loader && stencil build --prod",
+    "build": "bash -c ./monaco-workers.sh && rimraf dist loader && stencil build --prod",
     "dev": "stencil build --dev --watch --serve",
     "docs": "stencil build --docs",
     "test": "stencil test --spec --e2e",
@@ -28,11 +28,11 @@
     "monaco-editor": "^0.18.1"
   },
   "devDependencies": {
-    "@stencil/core": "1.5.4",
+    "@stencil/core": "1.7.1",
     "@stencil/postcss": "^1.0.1",
     "@stencil/sass": "^1.0.1",
     "cssnano": "^4.1.10",
-    "parcel": "^1.12.3",
+    "parcel": "^1.12.4",
     "rollup-plugin-node-polyfills": "^0.2.1",
     "rollup-plugin-postcss": "^2.0.3"
   },

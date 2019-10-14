@@ -2,16 +2,16 @@
   "name": "@d0whc3r/live-code",
   "version": "0.0.1",
   "dependencies": {
-    "@types/node": "12.7.11",
+    "@types/node": "12.7.12",
     "@types/react": "16.9.5",
     "@types/react-dom": "16.9.1",
-    "create-react-web-component": "2.0.7",
+    "create-react-web-component": "2.0.12",
     "react": "16.10.2",
     "react-dom": "16.10.2",
     "react-live": "^2.2.1",
     "react-scripts": "3.2.0",
     "style-it": "2.1.4",
-    "typescript": "3.6.3"
+    "typescript": "3.6.4"
   },
   "files": [
     "build"

@@ -26,12 +26,9 @@ export const config: Config = {
     }),
     nodePolyfills()
   ],
-  // commonjs: {
-  //   namedExports: {
-  //     'node_modules/react/index.js': ['Children', 'Component', 'PropTypes', 'createElement', 'Fragment'],
-  //     'node_modules/react-dom/index.js': ['render']
-  //   }
-  // },
+  devServer: {
+    port: 3333
+  },
   outputTargets: [
     {
       type: 'dist',

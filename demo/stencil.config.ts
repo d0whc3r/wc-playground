@@ -29,6 +29,9 @@ export const config: Config = {
     }),
     nodePolyfills()
   ],
+  devServer: {
+    port: 3334
+  },
   globalStyle: 'src/global/app.scss',
   globalScript: 'src/global/app.ts',
   outputTargets: [

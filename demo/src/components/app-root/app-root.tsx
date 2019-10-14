@@ -1,7 +1,7 @@
 import { Component, h, Prop, State } from '@stencil/core';
 import '@ionic/core';
-import '@d0whc3r/monaco-editor';
 import '@d0whc3r/live-code';
+import '@d0whc3r/monaco-editor';
 
 @Component({
   tag: 'app-root',
@@ -33,6 +33,15 @@ export class AppRoot {
   @State() actualCode = this.code;
   private editor?: HTMLMonacoEditorElement;
 
+  componentWillLoad() {
+    const content = /content=(.*)/.exec(window.location.search);
+    if (content && content.length) {
+      const code = atob(content[1]);
+      this.code = code;
+      this.model.content = code;
+    }
+  }
+
   private handleSave({ detail }: CustomEvent) {
     this.code = detail;
   }
@@ -57,8 +66,6 @@ export class AppRoot {
   }
 
   render() {
-    const unsaved = this.isUnsaved();
-    console.log('render usaved', unsaved);
     return (
       <div>
         <p>
@@ -67,7 +74,7 @@ export class AppRoot {
               Share link
             </a>
           )}
-          {this.isUnsaved() && <button onClick={() => this.saveFile}>Save</button>}
+          {this.isUnsaved() && <button onClick={() => this.saveFile()}>Save</button>}
         </p>
         <monaco-editor
           ref={(el) => (this.editor = el)}
@@ -78,8 +85,7 @@ export class AppRoot {
           onEditorChanged={(e) => this.handleChange(e)}
           onEditorSave={(e) => this.handleSave(e)}
         />
-        ;
-        <live-code class="viewer" code={this.code} />;
+        <live-code class="viewer" code={this.code} />
       </div>
     );
   }

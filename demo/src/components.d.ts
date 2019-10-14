@@ -4,57 +4,64 @@
  * It contains typing information for all components that exist in this project.
  */
 
-import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+
 
 export namespace Components {
   interface AppRoot {
-    code: string;
-    model: {
+    'code': string;
+    'model': {
       filename: string;
       content: string;
       language: string;
       options?: any;
     };
-    readonly?: boolean;
-    theme?: string;
+    'readonly'?: boolean;
+    'theme'?: string;
   }
 }
 
 declare global {
+
+
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
   };
   interface HTMLElementTagNameMap {
-    "app-root": HTMLAppRootElement;
+    'app-root': HTMLAppRootElement;
   }
 }
 
 declare namespace LocalJSX {
   interface AppRoot {
-    code?: string;
-    model?: {
+    'code'?: string;
+    'model'?: {
       filename: string;
       content: string;
       language: string;
       options?: any;
     };
-    readonly?: boolean;
-    theme?: string;
+    'readonly'?: boolean;
+    'theme'?: string;
   }
 
   interface IntrinsicElements {
-    "app-root": AppRoot;
+    'app-root': AppRoot;
   }
 }
 
 export { LocalJSX as JSX };
 
+
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
     }
   }
 }
+
+

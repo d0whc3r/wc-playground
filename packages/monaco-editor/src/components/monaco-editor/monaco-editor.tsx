@@ -129,6 +129,7 @@ export class MonacoEditorComponent {
   async runSave() {
     await this.codeEditor.getAction('editor.action.formatDocument').run();
     this.editorSave.emit(this.codeEditor.getValue());
+    // console.log('COMPONENT SAVED!');
   }
 
   render() {
