@@ -2,6 +2,8 @@ dist/
 build/
 www/
 loader/
+monaco-editor/workers/*
+!monaco-editor/workers/.gitkeep
 
 *~
 *.sw[mnpcod]
