@@ -9,6 +9,9 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@d0whc3r/live-code": "^0.0.1",
     "@d0whc3r/monaco-editor": "^0.0.1"

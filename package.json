@@ -36,9 +36,6 @@
     "----DEPLOY----": "------------------------------------------------------------------------------------------------",
     "deploy": "npm run build && lerna publish"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",

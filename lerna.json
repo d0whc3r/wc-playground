@@ -3,7 +3,7 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "message": "chore(release): publish version JENKINS_IGNORE",
+      "message": "chore(release): publish version [skip ci]",
       "ignoreChanges": ["*-lock.json"]
     }
   },

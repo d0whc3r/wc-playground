@@ -23,6 +23,9 @@
     "test": "react-app-rewired test --env=jest-environment-jsdom-fourteen",
     "docs": "echo no docs"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
