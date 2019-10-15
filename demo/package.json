@@ -2,6 +2,18 @@
   "name": "@d0whc3r/live-editor",
   "version": "0.1.0",
   "description": "Code playground",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/stencil-component/stencil-component.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
   "scripts": {
     "build": "stencil build --prod --es5",
     "dev": "stencil build --dev --watch --serve",
