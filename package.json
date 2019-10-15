@@ -34,7 +34,7 @@
     "demo:dev": "lerna run dev --scope @d0whc3r/live-editor --stream",
     "demo:build": "lerna run build --scope @d0whc3r/live-editor --stream",
     "----DEPLOY----": "------------------------------------------------------------------------------------------------",
-    "deploy": "npm run build && lerna publish"
+    "deploy": "npm run build && lerna publish --yes"
   },
   "husky": {
     "hooks": {
