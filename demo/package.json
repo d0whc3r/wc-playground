@@ -1,6 +1,6 @@
 {
   "name": "@d0whc3r/live-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Code playground",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
