@@ -1,5 +1,4 @@
 import { Component, h, Prop, State } from '@stencil/core';
-import '@ionic/core';
 import '@d0whc3r/live-code';
 import '@d0whc3r/monaco-editor';
 
@@ -11,7 +10,7 @@ import '@d0whc3r/monaco-editor';
 export class AppRoot {
   @Prop() code = `<div>
   <h1 style={{ background: 'red' }}>test playground</h1>
-  <ion-button>test button</ion-button>
+  <button>test button</button>
 </div>`;
   @Prop() model: {
     filename: string;

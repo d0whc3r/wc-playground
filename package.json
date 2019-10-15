@@ -32,7 +32,12 @@
     "live:docs": "lerna run docs --scope @d0whc3r/live-code --stream",
     "----DEMO----": "------------------------------------------------------------------------------------------------",
     "demo:dev": "lerna run dev --scope @d0whc3r/live-editor --stream",
-    "demo:build": "lerna run build --scope @d0whc3r/live-editor --stream"
+    "demo:build": "lerna run build --scope @d0whc3r/live-editor --stream",
+    "----DEPLOY----": "------------------------------------------------------------------------------------------------",
+    "deploy": "npm run build && lerna publish"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "husky": {
     "hooks": {
