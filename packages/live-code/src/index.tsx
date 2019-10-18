@@ -4,4 +4,4 @@ import App from './App';
 
 ReactWebComponent.setAttributes(componentAttributes);
 ReactWebComponent.setProperties(componentProperties);
-ReactWebComponent.render(App, 'live-code');
+ReactWebComponent.render(App, 'live-code', { shadow: false });
