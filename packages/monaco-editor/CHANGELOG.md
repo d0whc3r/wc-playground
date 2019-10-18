@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/d0whc3r/wc-playground/compare/@d0whc3r/monaco-editor@0.1.0...@d0whc3r/monaco-editor@0.1.1) (2019-10-18)
+
+
+### Bug Fixes
+
+* **monaco-editor:** components definition ([9974d0f](https://github.com/d0whc3r/wc-playground/commit/9974d0f94dd3b6082cdd739167b111506c78bed4))
+
+
+
+
+
 # 0.1.0 (2019-10-15)
 
 

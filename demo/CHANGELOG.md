@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/d0whc3r/wc-playground/compare/@d0whc3r/live-editor@0.1.1...@d0whc3r/live-editor@0.1.2) (2019-10-18)
+
+
+### Bug Fixes
+
+* **demo:** components definition ([6f150e9](https://github.com/d0whc3r/wc-playground/commit/6f150e995b11f3af920ef446067f9dec30915add))
+
+
+
+
+
 ## [0.1.1](https://github.com/d0whc3r/wc-playground/compare/@d0whc3r/live-editor@0.1.0...@d0whc3r/live-editor@0.1.1) (2019-10-15)
 
 **Note:** Version bump only for package @d0whc3r/live-editor
