@@ -33,7 +33,7 @@
   "devDependencies": {
     "@stencil/core": "1.7.4",
     "@stencil/postcss": "^1.0.1",
-    "@stencil/sass": "^1.0.1",
+    "@stencil/sass": "^1.1.0",
     "cssnano": "^4.1.10",
     "parcel": "^1.12.4",
     "rollup-plugin-node-polyfills": "^0.2.1",
