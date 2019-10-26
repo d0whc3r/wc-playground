@@ -32,7 +32,7 @@ declare global {
 
 
   interface HTMLMonacoEditorElement extends Components.MonacoEditor, HTMLStencilElement {}
-  const HTMLMonacoEditorElement: {
+  var HTMLMonacoEditorElement: {
     prototype: HTMLMonacoEditorElement;
     new (): HTMLMonacoEditorElement;
   };
