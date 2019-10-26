@@ -31,7 +31,7 @@
     "monaco-editor": "^0.18.1"
   },
   "devDependencies": {
-    "@stencil/core": "1.7.2",
+    "@stencil/core": "1.7.4",
     "@stencil/postcss": "^1.0.1",
     "@stencil/sass": "^1.0.1",
     "cssnano": "^4.1.10",
